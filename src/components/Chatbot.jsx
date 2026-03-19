@@ -146,12 +146,16 @@ function generateResponse(intent, text, history, project, derived) {
       return `**Gastrack** is your all-in-one school project management app! Here's what it does:\n\n• ⚙️ **Setup** — Set project name, budget, deadline, and team members\n• 📊 **Dashboard** — See budget summary, who paid what, risk status, and expense charts\n• 💸 **Expenses** — Log and track every expense with category and date\n• ✅ **Tasks** — Assign tasks to members with deadlines and progress tracking\n• 📁 **Treasury** — Upload and organize project files and receipts\n• 🤖 **GasBot AI** — That's me! I answer questions and give advice based on your actual project data\n\nAll data is saved to your Google account via Firebase — so you can access it from any device! 🌐`
 
     default: {
-      // Smart general response that pulls from context
       const hasData = budget > 0 || members.length > 0
       if (!hasData)
-        return `I'd love to give you a specific answer! But first, go to the **Setup tab** and fill in your project details — budget, deadline, and team members. Once that's done, I can give you personalized advice based on your actual data. 😊`
+        return `I'd love to help! First, go to the **Setup tab** and fill in your project details — budget, deadline, and team members. Once that's done, I can give you personalized advice based on your actual data. 😊`
 
-      return `Great question about **${title}**! Let me connect it to your project.\n\n**Quick status:**\n• 💰 Budget: ₱${remaining.toLocaleString()} remaining of ₱${budget.toLocaleString()} (${pct}% used)\n• ✅ Tasks: ${taskPct}% complete\n• ⏰ ${daysLeft} days until deadline\n• ${underpaidMembers.length ? `⚠️ ${underpaidMembers.join(', ')} still owe their share` : '✅ All contributions on track'}\n\nCan you be more specific? For example:\n• *"Who hasn't paid?"*\n• *"What tasks should I prioritize?"*\n• *"How do I handle a lazy teammate?"*\n• *"Are we going to finish on time?"*\n\nThe more specific, the better I can help! 🎯`
+      // Check if it's clearly out of scope (academic, general knowledge, etc.)
+      const outOfScope = t.match(/topic|subject|lesson|essay|research paper idea|assignment idea|what is|define|explain|history|science|math|formula|equation|code|program|create a|generate|write a|make a/)
+      if (outOfScope)
+        return `Pasensya, that's outside what I can help with! 😊 I'm GasBot — I specialize in **project management** for your group.\n\nHere's what I'm good at:\n• 💰 *"How's our budget?"* — tracks your actual spending\n• 👥 *"Who hasn't paid their share?"* — shows exact amounts owed\n• ✅ *"What tasks should we prioritize?"* — based on your deadlines\n• ⏰ *"Are we on track to finish?"* — real risk assessment\n• 🤝 *"My teammate won't contribute"* — step-by-step advice\n\nFor academic content help, try asking your professor or using a general AI tool. But for anything about **${title}** — I'm your guy! 🎯`
+
+      return `I'm not sure I understood that fully — can you rephrase? 😊\n\nFor **${title}**, I can help with:\n• Budget tracking and expense management\n• Who owes what in your group\n• Task assignments and deadlines\n• Handling team conflicts\n• File organization in Treasury\n\nTry one of the suggestion buttons below or ask something specific! 🎯`
     }
   }
 }
