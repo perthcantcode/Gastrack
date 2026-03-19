@@ -1,0 +1,78 @@
+.grid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 16px;
+}
+@media (max-width: 1000px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.group { margin-bottom: 12px; }
+
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.btnRow {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.tableWrap { overflow-x: auto; }
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.table th {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.table td {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text2);
+  vertical-align: middle;
+}
+.table tr:hover td { background: rgba(255,255,255,0.02); }
+.editing td { background: rgba(99,102,241,0.05) !important; }
+
+.nameCell { color: var(--text) !important; font-weight: 600; }
+.descCell { color: var(--text3) !important; max-width: 150px; }
+.amtCell  { font-family: var(--mono); color: var(--success) !important; font-weight: 600; white-space: nowrap; }
+.dateCell { font-family: var(--mono); font-size: 11px; white-space: nowrap; }
+.actionsCell { white-space: nowrap; }
+
+.empty {
+  text-align: center;
+  padding: 32px;
+  color: var(--text3);
+}
+
+.totalRow {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 10px 4px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--text2);
+}
+.totalAmt {
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--success);
+}
