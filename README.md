@@ -1,4 +1,4 @@
-# Gastrack v2.0 📊
+# Gastrack v2.0 
 
 > **Gastrack** — *gastos + track* · Filipino-English school group project resource allocator.
 
@@ -15,4 +15,4 @@ Built with **React + Vite + Firebase**. Dark/light mode, glassmorphism UI, AI as
 -  **Treasury** — upload and share files/documents with your team
 -  **GasBot AI** — Claude-powered assistant for budgeting, tasks, and project tips
 
-*Made by perthcantcode · React + Vite + Firebase + Claude AI*
+*React + Vite + Firebase + Claude AI*
