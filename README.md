@@ -5,7 +5,6 @@
 Built with **React + Vite + Firebase**. Dark/light mode, glassmorphism UI, AI assistant.
 
 ---
-
 ## Features
 
 -  **Google Login** — sign in with Google, data saved to your account
@@ -15,27 +14,5 @@ Built with **React + Vite + Firebase**. Dark/light mode, glassmorphism UI, AI as
 -  **Tasks** — assign tasks to members, track progress
 -  **Treasury** — upload and share files/documents with your team
 -  **GasBot AI** — Claude-powered assistant for budgeting, tasks, and project tips
-
----
-
-## Setup
-
-### 1. Install dependencies
-```bash
-npm install
-```
-
-### 2. Run dev server
-```bash
-npm run dev
-```
-
----
-
-## After cloning — add your own Firebase config
-
-Edit `src/firebase.js` and replace the `firebaseConfig` with your own from Firebase console.
-
----
 
 *Made by perthcantcode · React + Vite + Firebase + Claude AI*
